@@ -1,6 +1,6 @@
 # StocksLSTM
 
-A stock analysis program written mostly in python that uses Keras's LSTM neural network framework to predict the direction of trends within the stock market.
+A stock analysis program written in Python that uses Keras's LSTM neural network framework to predict the direction of trends within the stock market.
 
 Train.py: Run to create a model within the weights folder
 
