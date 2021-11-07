@@ -9,3 +9,6 @@ Test.py: Run to test the model with the testing data, create graphs to see what 
 Param.py: Constants used by the other Python files.
 
 Predict.py: Helper methods for both training and testing purposes.
+
+## Steps:
+The model has already been trained and the weight can be found in the `weights` folder. Re-train by running train.py if necessary. Run run.py to regenerate all the graphs and predictions about our function. The generated graphs with the predictions can be found in the graphs folder. 
