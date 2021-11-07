@@ -67,7 +67,7 @@ def predictnow(ticker):
     future_price = predict(model, data)
     # print some data for looking at
     print(f"In {LOOKUP_STEP} days, the price will be {future_price:.2f}$")
-    print(f"{LOSS} MAE Loss:", loss)
+    print(f"{LOSS} Loss:", loss)
     print("Mean Absolute Error:", mean_absolute_error)
     # plot true/pred prices graph
     plot_graph(final_df)
@@ -75,4 +75,4 @@ def predictnow(ticker):
     exit_filename = os.path.join("csvs", "{}_final".format(ticker) + "NEW.csv")
     final_df.to_csv(exit_filename)
 
-predictnow("FB")
+predictnow("Sony")
