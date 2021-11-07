@@ -24,7 +24,7 @@ model = create_model(N_STEPS, len(FEATURE_COLUMNS), loss=LOSS, units=UNITS, cell
                     dropout=DROPOUT, optimizer=OPTIMIZER)
 
 # some tensorflow callbacks
-checkpointer = ModelCheckpoint(os.path.join("results", model_name + ".h5"), save_weights_only=True, save_best_only=True, verbose=1)
+checkpointer = ModelCheckpoint(os.path.join("weights", model_name + ".h5"), save_weights_only=True, save_best_only=True, verbose=1)
 tensorboard = TensorBoard(log_dir=os.path.join("logs", model_name))
 # train the model and save the weights whenever we see new optimal
 history = model.fit(data["X_train"], data["y_train"],

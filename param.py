@@ -9,7 +9,6 @@ SHUFFLE = True
 SPLIT_BY_DATE = False
 TEST_SIZE = 0.3
 FEATURE_COLUMNS = ["open", "close", "compound"]
-FILE_NAME = "Sony_final.csv"
 
 N_LAYERS = 2
 CELL = LSTM
@@ -22,6 +21,6 @@ OPTIMIZER = "adam"
 BATCH_SIZE = 50
 EPOCHS = 100
 
-ticker = "AAPL"
+ticker = "Apple"
 ticker_data_filename = os.path.join("data", f"{ticker}.csv")
-model_name = f"Sony_final"
+model_name = f"Apple_final"

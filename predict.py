@@ -6,14 +6,7 @@ from sklearn.model_selection import train_test_split
 from collections import deque
 import numpy as np
 import pandas as pd
-import random
-
-from param import FILE_NAME
-
-# set seed, so we can get the same results after rerunning several times
-np.random.seed(666)
-tf.random.set_seed(666)
-random.seed(666)
+import os
 
 # shuffle two arrays in the same way
 def shuffleuni(a, b):
@@ -25,7 +18,8 @@ def shuffleuni(a, b):
 #load data for analysis
 def load_data(ticker, n_steps=50, scale=True, lookup_step=1, test_size=0.2, feature_columns=['open', 'close', 'compound']):
     #read file and create storage device
-    df = pd.read_csv(FILE_NAME)
+    readfile = os.path.join("csvs", "{}_final.csv".format(ticker))
+    df = pd.read_csv(readfile)
     result = {}
     result['df'] = df.copy()
 
@@ -102,7 +96,7 @@ def load_data(ticker, n_steps=50, scale=True, lookup_step=1, test_size=0.2, feat
     return result
 
 #create model
-def create_model(sequence_length, n_features, units=256, cell=LSTM, n_layers=2, dropout=0.3,
+def create_model(sequence_length, n_features, units=90, cell=LSTM, n_layers=2, dropout=0.5,
                 loss="mean_absolute_error", optimizer="adam"):
     model = Sequential()
     for i in range(n_layers):
